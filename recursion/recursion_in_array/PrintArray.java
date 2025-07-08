@@ -2,25 +2,21 @@ package recursion.recursion_in_array;
 
 import java.util.Scanner;
 
-public class MaxArray {
-
-    static int max(int[]arr,int idx){
+public class PrintArray {
+    static void printy(int []arr,int idx){
         int n=arr.length;
+       
 
-        if(idx==n-1){
-            return arr[idx];
-
+        if(idx==n){
+            return;
         }
-        int smallAns=max(arr,idx+1);
-
-        return Math.max(smallAns, arr[idx]);
-
+         System.out.println(arr[idx]);
+        printy(arr, idx +1);
+        
 
     }
     public static void main(String[] args) {
-        
-    
-    Scanner sc = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         int n= sc.nextInt();
         int []arr= new int[n];
         for(int i=0;i<n;i++){
@@ -28,9 +24,10 @@ public class MaxArray {
 
         }
         int idx=0;
-        int p=max(arr,idx);
-        System.out.println(p);
+        printy(arr,idx);
 
+        
+        
     }
     
 }
